@@ -94,21 +94,32 @@ read -p "Do you want to set file permissions numerical value? (y/n):" perm_choic
 	fi
 fi
 
-# Get the root directory of the Git repository
-repo_root=$(git rev-parse --show-toplevel)
-
 # add the file to git
 read -p "Do you want to push changes to remote repository? (y/n):" push_choice
 if  [ "$push_choice" = "y" ]; then
 	git add $filename
 
+# Prompt user to select a preferred text editor
+echo "Please select a text editor to add content to file: "
+	
+select text_editor_choice in "vi" "emacs" "nano" "nvim"
+do
+	case $text_editor_choice in
+		vi|emacs|nano|nvim)
+			git config --global core.editor "$text_editor_choice"
+			echo "Git will be using $text_editor_choice"
+			break
+			;;
+		*)
+			echo "Invalid option. Please select a valid text editor."
+	esac
+done
+
 # prompt the user for a commit message
-#
 echo "Enter a commit message"
-$text_editor "$repo_root/.git/COMMIT_EDITMSG"
 
 # commit the changes to the local repository
-git commit -F "$repo_root/.git/COMMIT_EDITMSG"
+git commit
 
 # push the changes to the remote repository
 git push
