@@ -90,6 +90,12 @@ That's it! Your Git automation script is set up and globally accessible on your 
 - [@josephjbassey](https://www.github.com/josephjbassey)
 
 
+## Acknowledgements
+
+ - [GitCommitPushScript](https://github.com/joeblinx39/GitCommitPushScript)
+
+   
+
   **I am open to contributions from the community reach out to me from any of the social links on my profile**
 
 
