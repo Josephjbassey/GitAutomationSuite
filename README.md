@@ -19,7 +19,10 @@ This script is designed to automate various tasks related to creating, editing, 
 1. Run the script by providing the desired filename as an argument. For example:
 
    ```bash
-   ./script.sh my_file / .c_compiler.sh my_cfile
+   ./script.sh my_file
+   ```
+   ```bash
+   ./c_compiler.sh my_cfile
    ```
 
 2. Follow the prompts to create or edit the file, add content, set permissions, compile C source files (if applicable), and choose whether to push changes to the remote repository.
