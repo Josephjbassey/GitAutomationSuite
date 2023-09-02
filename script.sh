@@ -1,6 +1,12 @@
 #!/bin/bash
 
-filename=$1
+# Check if the correct number of arguments is provided
+if [ $# -ne 1 ]; then
+  echo "Usage: $0 filename"
+  exit 1
+fi
+
+filename="$1"
 
 # create a new file with touch
 touch $filename
